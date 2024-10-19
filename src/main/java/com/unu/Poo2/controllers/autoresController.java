@@ -1,7 +1,7 @@
 package com.unu.Poo2.controllers;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
+
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -22,14 +22,14 @@ public class autoresController extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	if(request.getParameter("op")==null) {
-       	 //listar() ;
+       	 listar(request, response);
        		return;
        	}
        	
        	String operacion= request.getParameter("op");
        	switch (operacion) {
    		case "listar": {
-   			//listar();
+   			listar(request, response);
    			break;
    		}
    		case "nuevo":{
@@ -47,7 +47,7 @@ public class autoresController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		processRequest(request, response);
 	}
 
 	
