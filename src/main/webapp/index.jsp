@@ -7,7 +7,7 @@
 <title>Proyecto Poo 2</title>
 </head>
 <body>
-hola mundo web
+hola mundo web<p>
 <b>CHAD</b>
 </body>
 </html>

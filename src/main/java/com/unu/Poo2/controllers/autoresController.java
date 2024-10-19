@@ -21,10 +21,22 @@ public class autoresController extends HttpServlet {
     }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	if (request.getParameter("op")== null) {
-			listar(request,response);
-    		return;
-		}
+    	if(request.getParameter("op")==null) {
+       	 //listar() ;
+       		return;
+       	}
+       	
+       	String operacion= request.getParameter("op");
+       	switch (operacion) {
+   		case "listar": {
+   			//listar();
+   			break;
+   		}
+   		case "nuevo":{
+   			//nuevo();
+   			break;
+   		}
+       	}
     }
     
     private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,7 +47,7 @@ public class autoresController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		processRequest(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	
